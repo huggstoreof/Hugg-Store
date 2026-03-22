@@ -3,8 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HUGG Store</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta name="description" content="Hugg Store — Streetwear com intenção. Camisetas oversized e bermudas. Abrace o seu estilo.">
+<title>HUGG Store — Abrace o seu estilo</title>
+<link rel="icon" type="image/png" href="monograma.png.png">
+<link rel="apple-touch-icon" href="monograma.png.png">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500&family=Caveat:wght@700&display=swap" rel="stylesheet">
 <style>
 :root{--black:#000;--dark:#0D0D0D;--mid:#161616;--line:#1E1E1E;--white:#FFF;--gray:#888;--blue:#1A8FD1;--green:#25D366;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -33,20 +39,31 @@ nav{background:var(--black);border-bottom:1px solid var(--line);position:sticky;
 
 /* HERO CAROUSEL */
 .hero-carousel{position:relative;overflow:hidden;border-bottom:1px solid var(--line);}
-.carousel-slides{display:flex;transition:transform .5s ease;}
+.carousel-slides{display:flex;transition:transform .6s cubic-bezier(.25,.46,.45,.94);}
 .carousel-slide{min-width:100%;position:relative;}
-.carousel-slide img{width:100%;height:560px;object-fit:cover;object-position:center 30%;display:block;}
-.carousel-slide.text-only{aspect-ratio:16/9;background:var(--dark);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;padding:40px;}
-.carousel-slide .slide-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:60px 40px;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 60%);text-align:center;}
+.carousel-bg{width:100%;height:620px;background-size:cover;background-position:center 25%;background-repeat:no-repeat;display:block;}
+.carousel-slide.text-only .carousel-bg{background:#111;}
+.carousel-slide .slide-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:72px 40px;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.1) 50%,transparent 100%);text-align:center;}
+/* FONTE LOGO */
+.logo-font{font-family:'Caveat',cursive !important;}
+.slide-title{font-family:'Caveat',cursive;font-size:clamp(48px,7vw,96px);font-weight:700;line-height:.95;letter-spacing:-.01em;margin-bottom:20px;}
+
+/* SOON OVERLAY — fundo preto + texto na fonte da logo */
+.soon-overlay{position:absolute;inset:0;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
+.soon-label{font-family:'Caveat',cursive;font-size:32px;font-weight:700;color:#333;letter-spacing:.02em;}
+
+/* BERMUDA PRODUCT IMAGE — zoom no lado inferior */
+.product-img.bermuda-img img{object-position:center 80%;}
+
+/* EM BREVE card */
+.soon-overlay-text{font-family:'Caveat',cursive;font-size:28px;font-weight:700;color:#2A2A2A;}
 .slide-eyebrow{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:10px;}
-.slide-title{font-size:clamp(32px,5vw,72px);font-weight:500;line-height:.95;letter-spacing:-.02em;margin-bottom:16px;}
 .slide-cta{background:var(--white);color:var(--black);padding:12px 28px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s;}
-.slide-cta:hover{background:#E0E0E0;}
-.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.15);color:var(--white);width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:background .2s;z-index:10;}
+.slide-cta:hover{background:#E0E0E0;}background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.15);color:var(--white);width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:background .2s;z-index:10;}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);
 .carousel-btn:hover{background:rgba(0,0,0,.8);}
 .carousel-prev{left:20px;}
-.carousel-next{right:20px;}
-.carousel-dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10;}
+.carousel-next{right:20px;}left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10;}
 .carousel-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .2s;}
 .carousel-dot.active{background:var(--white);}
 
@@ -65,6 +82,8 @@ nav{background:var(--black);border-bottom:1px solid var(--line);position:sticky;
 .countdown-cta{background:none;border:1px solid var(--line);color:var(--gray);padding:12px 20px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:all .2s;white-space:nowrap;}
 .countdown-cta:hover{border-color:var(--white);color:var(--white);}
 @media(max-width:900px){
+  .carousel-bg{height:420px !important;}
+  .slide-title{font-size:clamp(36px,9vw,56px) !important;}
   .countdown-inner{flex-direction:column;align-items:flex-start;padding:24px 20px;gap:20px;}
   .countdown-block{min-width:60px;padding:10px 14px;}
   .countdown-num{font-size:24px;}
@@ -101,7 +120,9 @@ nav{background:var(--black);border-bottom:1px solid var(--line);position:sticky;
 .countdown-right{display:flex;justify-content:flex-end;}
 .countdown-cta{background:none;border:1px solid var(--white);color:var(--white);padding:10px 24px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s;white-space:nowrap;display:inline-block;}
 .countdown-cta:hover{background:var(--white);color:var(--black);}
-@media(max-width:900px){.countdown-inner{grid-template-columns:1fr;gap:20px;padding:24px 20px;}.countdown-right{justify-content:flex-start;}}
+@media(max-width:900px){
+  .carousel-bg{height:420px !important;}
+  .slide-title{font-size:clamp(36px,9vw,56px) !important;}.countdown-inner{grid-template-columns:1fr;gap:20px;padding:24px 20px;}.countdown-right{justify-content:flex-start;}}
 
 /* CAT BAR */
 .cat-bar{border-bottom:1px solid var(--line);background:var(--dark);overflow-x:auto;}
@@ -301,6 +322,8 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
 .empty-cat{grid-column:1/-1;text-align:center;padding:80px 20px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#333;}
 
 @media(max-width:900px){
+  .carousel-bg{height:420px !important;}
+  .slide-title{font-size:clamp(36px,9vw,56px) !important;}
   .shop-layout{grid-template-columns:1fr;padding:32px 20px;}
   .filters{display:none;}
   .products-grid{grid-template-columns:1fr 1fr;}
@@ -329,7 +352,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
 <!-- TOPBAR ANIMADO -->
 <div class="topbar">
   <div class="topbar-track" id="topbarTrack">
-    <span class="topbar-item">Drop 001 — Concrete Season</span>
+    <span class="topbar-item">Drop Basic — 001</span>
     <span class="topbar-sep">·</span>
     <span class="topbar-item">Frete grátis acima de R$299,90</span>
     <span class="topbar-sep">·</span>
@@ -337,7 +360,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
     <span class="topbar-sep">·</span>
     <span class="topbar-item">10% off na primeira compra — cupom HUGG10</span>
     <span class="topbar-sep">·</span>
-    <span class="topbar-item">Drop 001 — Concrete Season</span>
+    <span class="topbar-item">Drop Basic — 001</span>
     <span class="topbar-sep">·</span>
     <span class="topbar-item">Frete grátis acima de R$299,90</span>
     <span class="topbar-sep">·</span>
@@ -373,30 +396,27 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
 <!-- HERO CAROUSEL -->
 <div class="hero-carousel">
   <div class="carousel-slides" id="carouselSlides">
-    <!-- Slide 1 -->
     <div class="carousel-slide">
-      <img src="HUGG-TS-OVS-BROWN%202.png" alt="Drop 001">
+      <div class="carousel-bg" style="background-image:url('HUGG-TS-OVS-BROWN%202.png');background-position:center 20%;"></div>
       <div class="slide-content">
-        <p class="slide-eyebrow">Drop 001 — Concrete Season</p>
-        <h1 class="slide-title">Wear the<br>Silence.</h1>
+        <p class="slide-eyebrow">Drop Basic — 001</p>
+        <h1 class="slide-title">Abrace o<br>seu estilo.</h1>
         <a href="#colecao" class="slide-cta">Ver Coleção</a>
       </div>
     </div>
-    <!-- Slide 2 -->
     <div class="carousel-slide">
-      <img src="HUGG-TS-OVS-OW-3.png" alt="Off-White">
+      <div class="carousel-bg" style="background-image:url('HUGG-TS-OVS-OW-3.png');background-position:center 15%;"></div>
       <div class="slide-content">
         <p class="slide-eyebrow">Camiseta Off-White</p>
-        <h1 class="slide-title">Minimalismo<br>que fala.</h1>
+        <h1 class="slide-title">Feito pra quem<br>não precisa gritar.</h1>
         <a href="#colecao" class="slide-cta">Comprar Agora</a>
       </div>
     </div>
-    <!-- Slide 3 -->
     <div class="carousel-slide">
-      <img src="HUGG-TS-OVS-BROWN%204.png" alt="Marrom">
+      <div class="carousel-bg" style="background-image:url('HUGG-TS-OVS-BROWN%204.png');background-position:center 20%;"></div>
       <div class="slide-content">
         <p class="slide-eyebrow">Camiseta Marrom</p>
-        <h1 class="slide-title">Do concreto<br>pra qualquer lugar.</h1>
+        <h1 class="slide-title">Sua identidade,<br>sem barulho.</h1>
         <a href="#colecao" class="slide-cta">Ver Peça</a>
       </div>
     </div>
@@ -406,38 +426,6 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
   <div class="carousel-dots" id="carouselDots"></div>
 </div>
 
-<!-- COUNTDOWN DROP 002 -->
-<div class="countdown-section">
-  <div class="countdown-inner">
-    <div class="countdown-left">
-      <p class="countdown-eyebrow">Em breve</p>
-      <p class="countdown-title">Drop 002 chegando</p>
-      <p class="countdown-sub">10 de Abril de 2026 · 00h00</p>
-    </div>
-    <div class="countdown-blocks">
-      <div class="countdown-block">
-        <span class="countdown-num" id="cd-days">00</span>
-        <span class="countdown-label">Dias</span>
-      </div>
-      <span class="countdown-colon">:</span>
-      <div class="countdown-block">
-        <span class="countdown-num" id="cd-hours">00</span>
-        <span class="countdown-label">Horas</span>
-      </div>
-      <span class="countdown-colon">:</span>
-      <div class="countdown-block">
-        <span class="countdown-num" id="cd-mins">00</span>
-        <span class="countdown-label">Min</span>
-      </div>
-      <span class="countdown-colon">:</span>
-      <div class="countdown-block">
-        <span class="countdown-num" id="cd-secs">00</span>
-        <span class="countdown-label">Seg</span>
-      </div>
-    </div>
-    <a href="#colecao" class="countdown-cta">Garantir Drop 001 →</a>
-  </div>
-</div>
 
 <!-- BENEFITS -->
 <div class="benefits-bar">
@@ -481,7 +469,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
   <div class="countdown-inner">
     <div class="countdown-left">
       <p class="countdown-eyebrow">Em breve</p>
-      <p class="countdown-title">Drop 002 chegando</p>
+      <p class="countdown-title">Drop Basic — 002 chegando</p>
     </div>
     <div class="countdown-boxes">
       <div class="countdown-box">
@@ -676,16 +664,26 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
   </div>
 </div>
 
+<!-- MODAL POLÍTICAS -->
+<div class="modal-overlay" id="policyOverlay" style="align-items:flex-start;padding:40px 20px;">
+  <div style="background:var(--dark);border:1px solid var(--line);width:100%;max-width:680px;max-height:85vh;overflow-y:auto;position:relative;padding:40px;margin:auto;">
+    <button class="modal-close" onclick="closePolicy()">×</button>
+    <div id="policyContent"></div>
+  </div>
+</div>
+
 <footer>
   <img class="footer-mono" src="monograma.png.png" alt="">
   <img class="footer-logo" src="logo.png.png" alt="HUGG Store">
   <div class="footer-links">
     <a href="https://wa.me/5561996134684" target="_blank">WhatsApp</a>
-    <a href="#">Instagram</a>
-    <a href="#">Trocas &amp; Devoluções</a>
-    <a href="#">Política de Privacidade</a>
+    <a href="https://instagram.com/huggstore" target="_blank">Instagram</a>
+    <a href="#" onclick="showPolicy('trocas');return false;">Trocas &amp; Devoluções</a>
+    <a href="#" onclick="showPolicy('privacidade');return false;">Política de Privacidade</a>
+    <a href="#" onclick="showPolicy('envio');return false;">Envio &amp; Frete</a>
+    <a href="#" onclick="showPolicy('termos');return false;">Termos de Uso</a>
   </div>
-  <p class="footer-copy">© 2025 Hugg Store — Todos os direitos reservados</p>
+  <p class="footer-copy">© 2026 Hugg Store — Todos os direitos reservados</p>
 </footer>
 
 <script>
@@ -722,11 +720,11 @@ const products=[
    colors:[{name:'Preto',hex:'#0A0A0A',imgs:[
      'HUGG-TS-OVS-OW-4.png',
      'HUGG-TS-OVS-BROWN%205.png',
-   ]}],sizes:['P','M','G','GG'],esgotado:[],
+   ]}],sizes:['P','M','G','GG'],esgotado:[],bermuda:true,
    desc:'Moletom pesado. "HUGG" bordado na lateral. Elástico ajustável.'},
 
   {id:99,cat:'kit',badge:'Kit',soon:false,
-   name:'Kit — Camiseta + Bermuda (Concrete Season)',price:199.90,
+   name:'Kit — Drop Basic 001',price:199.90,
    colors:[
      {name:'Off-White + Preto',hex:'#F2F0E8',imgs:['HUGG-TS-OVS-OW-4.png','HUGG-TS-OVS-OW-2.png']},
      {name:'Marrom + Preto',hex:'#4E342E',imgs:['HUGG-TS-OVS-BROWN%205.png','HUGG-TS-OVS-BROWN%202.png']},
@@ -782,9 +780,9 @@ function renderProducts(){
     const img=p.colors[0].imgs[0];
     return`<div class="product-card${p.soon?' is-soon':''}" ${p.soon?'':'onclick="openModal('+p.id+')"'}>
       <span class="product-badge${p.soon?' soon':p.badge==='Kit'?' kit':''}">${p.badge}</span>
-      <div class="product-img">
+      <div class="product-img${p.bermuda?' bermuda-img':''}">
         <img src="${img}" alt="${p.name}" loading="lazy">
-        ${p.soon?`<div class="soon-overlay"><img class="soon-mono" src="${MONO}" alt=""><span class="soon-label">Em breve</span></div>`
+        ${p.soon?`<div class="soon-overlay"><span class="soon-overlay-text">Em Breve</span></div>`
         :`<div class="product-overlay"><button class="overlay-btn">Ver produto</button></div>`}
       </div>
       <div class="product-info">
@@ -970,34 +968,123 @@ function checkoutWpp(){
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
 function bumpBadge(){const el=document.getElementById('cartCount');el.style.transform='scale(1.5)';setTimeout(()=>el.style.transform='',250);}
 
-/* ── COUNTDOWN ── */
 function initCountdown(){
   const target=new Date('2026-04-10T00:00:00-03:00').getTime();
   function tick(){
-    const now=Date.now();
-    const diff=target-now;
-    if(diff<=0){
-      document.getElementById('cd-days').textContent='00';
-      document.getElementById('cd-hours').textContent='00';
-      document.getElementById('cd-mins').textContent='00';
-      document.getElementById('cd-secs').textContent='00';
-      return;
-    }
-    const d=Math.floor(diff/86400000);
-    const h=Math.floor((diff%86400000)/3600000);
-    const m=Math.floor((diff%3600000)/60000);
-    const s=Math.floor((diff%60000)/1000);
-    document.getElementById('cd-days').textContent=String(d).padStart(2,'0');
-    document.getElementById('cd-hours').textContent=String(h).padStart(2,'0');
-    document.getElementById('cd-mins').textContent=String(m).padStart(2,'0');
-    document.getElementById('cd-secs').textContent=String(s).padStart(2,'0');
+    const diff=target-Date.now();
+    const d=Math.max(0,Math.floor(diff/86400000));
+    const h=Math.max(0,Math.floor((diff%86400000)/3600000));
+    const m=Math.max(0,Math.floor((diff%3600000)/60000));
+    const s=Math.max(0,Math.floor((diff%60000)/1000));
+    const pad=n=>String(n).padStart(2,'0');
+    const days=document.getElementById('cdDays');
+    const hours=document.getElementById('cdHours');
+    const mins=document.getElementById('cdMins');
+    const secs=document.getElementById('cdSecs');
+    if(days) days.textContent=pad(d);
+    if(hours) hours.textContent=pad(h);
+    if(mins) mins.textContent=pad(m);
+    if(secs) secs.textContent=pad(s);
   }
   tick();
   setInterval(tick,1000);
 }
 
+/* ── POLICIES ── */
+const policies={
+  trocas:`
+    <h2 style="font-family:'Caveat',cursive;font-size:36px;margin-bottom:24px;">Trocas &amp; Devoluções</h2>
+    <p style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:32px;">Atualizado em Janeiro de 2026</p>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Prazo para Troca</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;margin-bottom:24px;">Você tem até <strong style="color:#AAA;">7 dias corridos</strong> após o recebimento do produto para solicitar troca ou devolução, conforme o Código de Defesa do Consumidor (Art. 49, Lei 8.078/90).</p>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Condições</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;margin-bottom:8px;">Para que a troca ou devolução seja aceita, o produto deve:</p>
+    <ul style="font-size:13px;color:#888;line-height:2;margin-bottom:24px;padding-left:20px;">
+      <li>Estar sem uso, sem lavagem e sem odores</li>
+      <li>Estar com a etiqueta original intacta</li>
+      <li>Estar na embalagem original ou similar</li>
+      <li>Não apresentar manchas, rasuras ou danos causados pelo cliente</li>
+    </ul>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Como Solicitar</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;margin-bottom:24px;">Entre em contato pelo <strong style="color:#AAA;">WhatsApp (61) 99613-4684</strong> informando seu nome, número do pedido e o motivo da troca. Nossa equipe responderá em até 1 dia útil com as instruções de envio.</p>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Frete de Devolução</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;margin-bottom:24px;">Em caso de <strong style="color:#AAA;">defeito de fabricação</strong>, o frete de devolução é por nossa conta. Em caso de troca por tamanho ou preferência, o frete de retorno é de responsabilidade do cliente.</p>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Reembolso</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;">O reembolso será realizado em até <strong style="color:#AAA;">5 dias úteis</strong> após o recebimento e análise do produto devolvido, via PIX no mesmo CPF utilizado na compra.
+    </p>`,
+
+  privacidade:`
+    <h2 style="font-family:'Caveat',cursive;font-size:36px;margin-bottom:24px;">Política de Privacidade</h2>
+    <p style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:32px;">Atualizado em Janeiro de 2026</p>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Dados Coletados</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;margin-bottom:24px;">A Hugg Store coleta apenas os dados necessários para processar seu pedido: nome completo, endereço de entrega, CEP e contato via WhatsApp. <strong style="color:#AAA;">Não armazenamos dados de cartão de crédito</strong> — os pagamentos são processados diretamente via PIX.</p>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Uso dos Dados</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;margin-bottom:24px;">Seus dados são utilizados exclusivamente para: processamento e entrega do pedido, comunicação sobre o status do pedido e atendimento ao cliente. <strong style="color:#AAA;">Não compartilhamos suas informações com terceiros</strong> para fins de marketing.</p>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Seus Direitos (LGPD)</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;margin-bottom:24px;">Conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018), você tem direito a acessar, corrigir ou solicitar a exclusão dos seus dados pessoais a qualquer momento. Para exercer esses direitos, entre em contato pelo WhatsApp.</p>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Cookies</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;">Este site não utiliza cookies de rastreamento ou publicidade. Utilizamos apenas os recursos técnicos necessários para o funcionamento da loja.</p>`,
+
+  envio:`
+    <h2 style="font-family:'Caveat',cursive;font-size:36px;margin-bottom:24px;">Envio &amp; Frete</h2>
+    <p style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:32px;">Atualizado em Janeiro de 2026</p>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Prazo de Envio</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;margin-bottom:24px;">Os pedidos são preparados e enviados em até <strong style="color:#AAA;">2 dias úteis</strong> após a confirmação do pagamento. Você receberá o código de rastreamento pelo WhatsApp assim que o pedido for despachado.</p>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Prazo de Entrega</h3>
+    <ul style="font-size:13px;color:#888;line-height:2;margin-bottom:24px;padding-left:20px;">
+      <li><strong style="color:#AAA;">Centro-Oeste (DF, GO, MT, MS):</strong> 2–4 dias úteis</li>
+      <li><strong style="color:#AAA;">Sudeste (SP, RJ, MG, ES):</strong> 3–5 dias úteis</li>
+      <li><strong style="color:#AAA;">Sul (PR, SC, RS):</strong> 4–6 dias úteis</li>
+      <li><strong style="color:#AAA;">Nordeste:</strong> 5–8 dias úteis</li>
+      <li><strong style="color:#AAA;">Norte:</strong> 6–10 dias úteis</li>
+    </ul>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Frete Grátis</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;margin-bottom:24px;">Compras acima de <strong style="color:#AAA;">R$ 299,90</strong> têm frete grátis para todo o Brasil, via Correios PAC.</p>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Rastreamento</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;">Após o envio, você receberá o código de rastreamento pelo WhatsApp. Você pode acompanhar sua entrega diretamente no site dos <a href="https://rastreamento.correios.com.br" target="_blank" style="color:var(--blue);">Correios</a>.</p>`,
+
+  termos:`
+    <h2 style="font-family:'Caveat',cursive;font-size:36px;margin-bottom:24px;">Termos de Uso</h2>
+    <p style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:32px;">Atualizado em Janeiro de 2026</p>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Aceitação</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;margin-bottom:24px;">Ao utilizar o site da Hugg Store e realizar compras, você concorda com estes Termos de Uso. Caso não concorde com algum ponto, pedimos que não utilize nossos serviços.</p>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Propriedade Intelectual</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;margin-bottom:24px;">Todos os conteúdos deste site — incluindo logo, monograma, fotografias, textos e design — são de propriedade exclusiva da <strong style="color:#AAA;">Hugg Store</strong> e protegidos por lei. É proibida a reprodução, cópia ou uso sem autorização expressa.</p>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Disponibilidade de Estoque</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;margin-bottom:24px;">Os produtos são oferecidos em estoque limitado. A Hugg Store não se responsabiliza pela indisponibilidade de produtos após a confirmação do pedido em situações excepcionais, comprometendo-se nesse caso a reembolso integral ou troca.</p>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Pagamento</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;margin-bottom:24px;">Os pagamentos são realizados via PIX ou parcelamento no cartão, processados diretamente pelo vendedor. O pedido só é confirmado após a verificação do pagamento.</p>
+
+    <h3 style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Contato</h3>
+    <p style="font-size:13px;color:#888;line-height:1.8;">Para dúvidas, sugestões ou reclamações: <strong style="color:#AAA;">WhatsApp (61) 99613-4684</strong> ou pelo Instagram <strong style="color:#AAA;">@huggstore</strong>. Atendimento de segunda a sábado, das 9h às 18h.</p>`
+};
+
+function showPolicy(type){
+  document.getElementById('policyContent').innerHTML=policies[type]||'';
+  document.getElementById('policyOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
 initCountdown();
-initCarousel();renderProducts();renderCart();
+initCarousel();
+renderProducts();
+renderCart();
 </script>
 </body>
 </html>
