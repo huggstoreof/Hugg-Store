@@ -20,7 +20,7 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
 /* TOPBAR */
 .topbar{background:var(--white);overflow:hidden;height:36px;position:relative;}
 .topbar-track{display:flex;position:absolute;white-space:nowrap;animation:topscroll 22s linear infinite;}
-.topbar-item{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:10px 48px;color:var(--black);}
+.topbar-item{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:10px 48px;color:var(--black);font-weight:700;}
 .topbar-sep{padding:10px 0;opacity:.4;}
 @keyframes topscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
@@ -155,6 +155,7 @@ nav{background:var(--black);border-bottom:1px solid var(--line);position:sticky;
 .product-img{aspect-ratio:1;overflow:hidden;background:#111;position:relative;}
 .product-img img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s;}
 .product-card:hover:not(.is-soon) .product-img img{transform:scale(1.04);}
+.product-badge.esgotado-prod{background:#222;color:#666;}
 /* PRODUCT OVERLAY */
 .soon-label{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gray);}
 .product-overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s;}
@@ -351,7 +352,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
 <!-- TOPBAR ANIMADO -->
 <div class="topbar">
   <div class="topbar-track" id="topbarTrack">
-    <span class="topbar-item">Drop Basic — 001</span>
+    <span class="topbar-item">Drop Basic — 002</span>
     <span class="topbar-sep">·</span>
     <span class="topbar-item">Frete grátis acima de R$299,90</span>
     <span class="topbar-sep">·</span>
@@ -359,7 +360,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
     <span class="topbar-sep">·</span>
     <span class="topbar-item">10% off na primeira compra — cupom HUGG10</span>
     <span class="topbar-sep">·</span>
-    <span class="topbar-item">Drop Basic — 001</span>
+    <span class="topbar-item">Drop Basic — 002</span>
     <span class="topbar-sep">·</span>
     <span class="topbar-item">Frete grátis acima de R$299,90</span>
     <span class="topbar-sep">·</span>
@@ -398,7 +399,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
     <div class="carousel-slide">
       <div class="carousel-bg" style="background-image:url('HUGG-TS-OVS-BROWN%202.png');background-position:center 20%;"></div>
       <div class="slide-content">
-        <p class="slide-eyebrow">Drop Basic — 001</p>
+        <p class="slide-eyebrow">Drop Basic — 002</p>
         <h1 class="slide-title">Abrace o<br>seu estilo.</h1>
         <a href="#colecao" class="slide-cta">Ver Coleção</a>
       </div>
@@ -406,7 +407,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
     <div class="carousel-slide">
       <div class="carousel-bg" style="background-image:url('HUGG-TS-OVS-OW-3.png');background-position:center 15%;"></div>
       <div class="slide-content">
-        <p class="slide-eyebrow">Camiseta Off-White</p>
+        <p class="slide-eyebrow">Off-White</p>
         <h1 class="slide-title">Feito pra quem<br>não precisa gritar.</h1>
         <a href="#colecao" class="slide-cta">Comprar Agora</a>
       </div>
@@ -467,8 +468,8 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
 <div class="countdown-section">
   <div class="countdown-inner">
     <div class="countdown-left">
-      <p class="countdown-eyebrow">Em breve</p>
-      <p class="countdown-title">Drop Basic — 002 chegando</p>
+      <p class="countdown-eyebrow">Lançamento</p>
+      <p class="countdown-title">Abertura das vendas chegando</p>
     </div>
     <div class="countdown-boxes">
       <div class="countdown-box">
@@ -549,9 +550,9 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
       <div class="kit-img"><img src="HUGG-TS-OVS-BROWN%202.png" alt=""></div>
     </div>
     <div class="kit-info">
-      <span class="kit-badge">Kit Drop 001</span>
-      <h3 class="kit-name">Camiseta + Bermuda<br>Drop Basic — 001</h3>
-      <p class="kit-desc">O conjunto oficial do Drop 001. Escolha sua cor de camiseta e leve a bermuda preta. Juntos, saindo por menos.</p>
+      <span class="kit-badge">Kit Drop Basic — 002</span>
+      <h3 class="kit-name">Camiseta + Bermuda<br>Drop Basic — 002</h3>
+      <p class="kit-desc">O conjunto oficial do Drop Basic — 002. Camiseta + Bermuda preta. Saindo por menos juntos.</p>
       <div class="kit-price-block">
         <p class="kit-price-old">R$ 219,80 separados</p>
         <p class="kit-price-new">R$ 199,90</p>
@@ -572,7 +573,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
   <div class="quem-usa-grid">
     <div class="quem-usa-item">
       <img src="HUGG-TS-OVS-OW-3.png" alt="Quem usa">
-      <div class="quem-usa-overlay"><span class="quem-usa-tag">Camiseta Off-White</span></div>
+      <div class="quem-usa-overlay"><span class="quem-usa-tag">Off-White</span></div>
     </div>
     <div class="quem-usa-item">
       <img src="HUGG-TS-OVS-BROWN%203.png" alt="Quem usa">
@@ -584,7 +585,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
     </div>
     <div class="quem-usa-item">
       <img src="HUGG-TS-OVS-BROWN%205.png" alt="Quem usa">
-      <div class="quem-usa-overlay"><span class="quem-usa-tag">Drop 001</span></div>
+      <div class="quem-usa-overlay"><span class="quem-usa-tag">Drop Basic — 002</span></div>
     </div>
   </div>
 </div>
@@ -723,14 +724,30 @@ const products=[
    desc:'Moletom pesado. "HUGG" bordado na lateral. Elástico ajustável.'},
 
   {id:99,cat:'kit',badge:'Kit',soon:false,
-   name:'Kit — Drop Basic 001',price:199.90,
+   name:'Kit — Drop Basic 002',price:199.90,
    colors:[
      {name:'Off-White + Preto',hex:'#F2F0E8',imgs:['HUGG-TS-OVS-OW-4.png','HUGG-TS-OVS-OW-2.png']},
      {name:'Marrom + Preto',hex:'#4E342E',imgs:['HUGG-TS-OVS-BROWN%205.png','HUGG-TS-OVS-BROWN%202.png']},
    ],sizes:['P','M','G'],esgotado:[],
    desc:'<strong>Economize R$19,90</strong> levando a camiseta e a bermuda juntas. Escolha a cor da camiseta — a bermuda é sempre preta. Suedine 240g + moletom pesado.'},
 
-  {id:4,cat:'bones',badge:'Em Breve',soon:true,name:'Boné Dad Hat',price:109.90,colors:[{name:'Preto',hex:'#0A0A0A',imgs:['']},{name:'Bege',hex:'#C8B89A',imgs:['']}],sizes:['Único'],esgotado:[],desc:'Em breve.'},
+  {id:4,cat:'bones',badge:'Esgotado',soon:false,esgotado_produto:true,
+   name:'Boné Dad Hat — Bege',price:109.90,
+   colors:[{name:'Bege',hex:'#C8B89A',imgs:[
+     'HUGG-BN-BG%201.JPG',
+     'HUGG-BN-BG%202.JPG',
+     'HUGG-BN-BG%203.JPG',
+   ]}],sizes:['Único'],esgotado:['Único'],
+   desc:'Dad hat em tecido sarja. "HUGG" bordado na frente. Aba pré-curvada. Ajuste traseiro. <strong>Produto esgotado — em reposição no Drop Basic 002.</strong>'},
+
+  {id:8,cat:'bones',badge:'Esgotado',soon:false,esgotado_produto:true,
+   name:'Boné Dad Hat — Preto',price:109.90,
+   colors:[{name:'Preto',hex:'#0A0A0A',imgs:[
+     'HUGG-BN-BLK%201.JPG',
+     'HUGG-BN-BLK%202.JPG',
+     'HUGG-BN-BLK%203.JPG',
+   ]}],sizes:['Único'],esgotado:['Único'],
+   desc:'Dad hat em tecido sarja preta. "HUGG" bordado em branco na frente. Aba pré-curvada. Ajuste traseiro. <strong>Produto esgotado — em reposição no Drop Basic 002.</strong>'},
   {id:5,cat:'calcas',badge:'Em Breve',soon:true,name:'Calça Cargo',price:189.90,colors:[{name:'Preto',hex:'#0A0A0A',imgs:['']}],sizes:['P','M','G'],esgotado:[],desc:'Em breve.'},
   {id:6,cat:'cropped',badge:'Em Breve',soon:true,name:'Cropped Oversized',price:109.90,colors:[{name:'Off-White',hex:'#F2F0E8',imgs:['']},{name:'Marrom',hex:'#4E342E',imgs:['']}],sizes:['P','M','G'],esgotado:[],desc:'Em breve.'},
   {id:7,cat:'bags',badge:'Em Breve',soon:true,name:'Shoulder Bag',price:149.90,colors:[{name:'Preto',hex:'#0A0A0A',imgs:['']}],sizes:['Único'],esgotado:[],desc:'Em breve.'},
@@ -777,17 +794,19 @@ function renderProducts(){
   if(!filtered.length){grid.innerHTML='<div class="empty-cat">Nenhum produto encontrado</div>';return;}
   grid.innerHTML=filtered.map(p=>{
     const img=p.colors[0].imgs[0];
-    return`<div class="product-card${p.soon?' is-soon':''}" ${p.soon?'':'onclick="openModal('+p.id+')"'}>
-      <span class="product-badge${p.soon?' soon':p.badge==='Kit'?' kit':''}">${p.badge}</span>
+    const badgeClass=p.soon?' soon':p.badge==='Kit'?' kit':p.esgotado_produto?' esgotado-prod':'';
+    return`<div class="product-card${p.soon?' is-soon':p.esgotado_produto?' is-soon':''}" ${(p.soon||p.esgotado_produto)?'':'onclick="openModal('+p.id+')"'}>
+      <span class="product-badge${badgeClass}">${p.badge}</span>
       <div class="product-img${p.bermuda?' bermuda-img':''}">
         ${img?`<img src="${img}" alt="${p.name}" loading="lazy">`:''}
         ${p.soon?`<div class="soon-overlay"><span class="soon-overlay-text">Em Breve</span></div>`
+        :p.esgotado_produto?`<div class="soon-overlay" style="background:rgba(0,0,0,0.65);"><span class="soon-overlay-text" style="color:#555;">Esgotado</span></div>`
         :`<div class="product-overlay"><button class="overlay-btn">Ver produto</button></div>`}
       </div>
       <div class="product-info">
         <p class="product-name">${p.name}</p>
         <div class="product-colors">${p.colors.map((c,i)=>`<div class="color-dot${i===0?' active':''}" style="background:${c.hex};${c.hex==='#F2F0E8'?'border-color:#666;':''}" title="${c.name}"></div>`).join('')}</div>
-        ${p.soon?`<p class="soon-from">A partir de ${fmt(p.price)}</p>`
+        ${(p.soon||p.esgotado_produto)?`<p class="soon-from">${p.esgotado_produto?'Esgotado':'A partir de '+fmt(p.price)}</p>`
         :`<div class="product-price-row"><span class="product-price">${fmt(p.price)}</span><span class="product-price-pix">${pixFmt(p.price)} no PIX</span></div>
           <p class="product-install">${instFmt(p.price)}</p>
           <div class="size-chips">${p.sizes.map(s=>`<span class="size-chip${p.esgotado.includes(s)?' esgotado':''}">${s}</span>`).join('')}</div>`}
