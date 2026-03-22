@@ -18,9 +18,9 @@ html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;min-height:100vh;}
 
 /* TOPBAR */
-.topbar{background:var(--blue);overflow:hidden;height:36px;position:relative;}
+.topbar{background:var(--white);overflow:hidden;height:36px;position:relative;}
 .topbar-track{display:flex;position:absolute;white-space:nowrap;animation:topscroll 22s linear infinite;}
-.topbar-item{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:10px 48px;}
+.topbar-item{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:10px 48px;color:var(--black);}
 .topbar-sep{padding:10px 0;opacity:.4;}
 @keyframes topscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
@@ -50,7 +50,7 @@ nav{background:var(--black);border-bottom:1px solid var(--line);position:sticky;
 
 /* SOON OVERLAY — fundo preto + texto na fonte da logo */
 .soon-overlay{position:absolute;inset:0;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
-.soon-label{font-family:'Caveat',cursive;font-size:32px;font-weight:700;color:#333;letter-spacing:.02em;}
+.soon-overlay-text{font-family:'Caveat',cursive;font-size:36px;font-weight:700;color:#333;letter-spacing:.02em;}
 
 /* BERMUDA PRODUCT IMAGE — zoom no lado inferior */
 .product-img.bermuda-img img{object-position:center 80%;}
@@ -155,8 +155,7 @@ nav{background:var(--black);border-bottom:1px solid var(--line);position:sticky;
 .product-img{aspect-ratio:1;overflow:hidden;background:#111;position:relative;}
 .product-img img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s;}
 .product-card:hover:not(.is-soon) .product-img img{transform:scale(1.04);}
-.soon-overlay{position:absolute;inset:0;background:rgba(0,0,0,.72);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;}
-.soon-mono{width:56px;opacity:.5;}
+/* PRODUCT OVERLAY */
 .soon-label{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gray);}
 .product-overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s;}
 .product-card:hover:not(.is-soon) .product-overlay{opacity:1;}
@@ -544,14 +543,14 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
   </div>
   <div class="kit-card" onclick="openModal(99)">
     <div class="kit-imgs">
+      <div class="kit-img"><img src="HUGG-TS-OVS-OW-4.png" alt="" style="object-position:center 75%;"></div>
+      <div class="kit-img"><img src="HUGG-TS-OVS-BROWN%205.png" alt="" style="object-position:center 75%;"></div>
       <div class="kit-img"><img src="HUGG-TS-OVS-OW-2.png" alt=""></div>
       <div class="kit-img"><img src="HUGG-TS-OVS-BROWN%202.png" alt=""></div>
-      <div class="kit-img"><img src="HUGG-TS-OVS-OW-4.png" alt=""></div>
-      <div class="kit-img"><img src="HUGG-TS-OVS-BROWN%205.png" alt=""></div>
     </div>
     <div class="kit-info">
       <span class="kit-badge">Kit Drop 001</span>
-      <h3 class="kit-name">Camiseta + Bermuda<br>Concrete Season</h3>
+      <h3 class="kit-name">Camiseta + Bermuda<br>Drop Basic — 001</h3>
       <p class="kit-desc">O conjunto oficial do Drop 001. Escolha sua cor de camiseta e leve a bermuda preta. Juntos, saindo por menos.</p>
       <div class="kit-price-block">
         <p class="kit-price-old">R$ 219,80 separados</p>
@@ -731,10 +730,10 @@ const products=[
    ],sizes:['P','M','G'],esgotado:[],
    desc:'<strong>Economize R$19,90</strong> levando a camiseta e a bermuda juntas. Escolha a cor da camiseta — a bermuda é sempre preta. Suedine 240g + moletom pesado.'},
 
-  {id:4,cat:'bones',badge:'Em Breve',soon:true,name:'Boné Dad Hat',price:109.90,colors:[{name:'Preto',hex:'#0A0A0A',imgs:[MONO]},{name:'Bege',hex:'#C8B89A',imgs:[MONO]}],sizes:['Único'],esgotado:[],desc:'Em breve.'},
-  {id:5,cat:'calcas',badge:'Em Breve',soon:true,name:'Calça Cargo',price:189.90,colors:[{name:'Preto',hex:'#0A0A0A',imgs:[MONO]}],sizes:['P','M','G'],esgotado:[],desc:'Em breve.'},
-  {id:6,cat:'cropped',badge:'Em Breve',soon:true,name:'Cropped Oversized',price:109.90,colors:[{name:'Off-White',hex:'#F2F0E8',imgs:[MONO]},{name:'Marrom',hex:'#4E342E',imgs:[MONO]}],sizes:['P','M','G'],esgotado:[],desc:'Em breve.'},
-  {id:7,cat:'bags',badge:'Em Breve',soon:true,name:'Shoulder Bag',price:149.90,colors:[{name:'Preto',hex:'#0A0A0A',imgs:[MONO]}],sizes:['Único'],esgotado:[],desc:'Em breve.'},
+  {id:4,cat:'bones',badge:'Em Breve',soon:true,name:'Boné Dad Hat',price:109.90,colors:[{name:'Preto',hex:'#0A0A0A',imgs:['']},{name:'Bege',hex:'#C8B89A',imgs:['']}],sizes:['Único'],esgotado:[],desc:'Em breve.'},
+  {id:5,cat:'calcas',badge:'Em Breve',soon:true,name:'Calça Cargo',price:189.90,colors:[{name:'Preto',hex:'#0A0A0A',imgs:['']}],sizes:['P','M','G'],esgotado:[],desc:'Em breve.'},
+  {id:6,cat:'cropped',badge:'Em Breve',soon:true,name:'Cropped Oversized',price:109.90,colors:[{name:'Off-White',hex:'#F2F0E8',imgs:['']},{name:'Marrom',hex:'#4E342E',imgs:['']}],sizes:['P','M','G'],esgotado:[],desc:'Em breve.'},
+  {id:7,cat:'bags',badge:'Em Breve',soon:true,name:'Shoulder Bag',price:149.90,colors:[{name:'Preto',hex:'#0A0A0A',imgs:['']}],sizes:['Único'],esgotado:[],desc:'Em breve.'},
 ];
 
 let cart=[],currentProduct=null,selColor=0,selSize=null,currentCat='todos',filtSizes=[],filtColors=[];
@@ -781,7 +780,7 @@ function renderProducts(){
     return`<div class="product-card${p.soon?' is-soon':''}" ${p.soon?'':'onclick="openModal('+p.id+')"'}>
       <span class="product-badge${p.soon?' soon':p.badge==='Kit'?' kit':''}">${p.badge}</span>
       <div class="product-img${p.bermuda?' bermuda-img':''}">
-        <img src="${img}" alt="${p.name}" loading="lazy">
+        ${img?`<img src="${img}" alt="${p.name}" loading="lazy">`:''}
         ${p.soon?`<div class="soon-overlay"><span class="soon-overlay-text">Em Breve</span></div>`
         :`<div class="product-overlay"><button class="overlay-btn">Ver produto</button></div>`}
       </div>
