@@ -7,7 +7,7 @@
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <meta name="description" content="Hugg Store — Streetwear com intenção. Camisetas oversized e bermudas. Abrace o seu estilo.">
-<title>Hugg Store — Abrace o seu estilo</title>
+<title>HUGG Store — Abrace o seu estilo</title>
 <link rel="icon" type="image/png" href="monograma.png.png">
 <link rel="apple-touch-icon" href="monograma.png.png">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500&family=Caveat:wght@700&display=swap" rel="stylesheet">
@@ -376,7 +376,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
 <nav>
   <div class="nav-inner">
     <div class="nav-left">
-      <a href="#" class="active" onclick="filterCat('todos',this);return false;">Início</a>
+      <a href="#" class="active" onclick="filterCat('todos',this);return false;">Home</a>
       <a href="#" onclick="filterCat('camisetas',this);return false;">Camisetas</a>
       <a href="#" onclick="filterCat('bermudas',this);return false;">Bermudas</a>
       <a href="#" onclick="filterCat('bones',this);return false;">Bonés</a>
@@ -398,27 +398,17 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
 <div class="hero-carousel">
   <div class="carousel-slides" id="carouselSlides">
     <div class="carousel-slide">
-      <div class="carousel-bg" style="background-image:url('HUGG-TS-OVS-BROWN%202.png');background-position:center 20%;"></div>
+      <div class="carousel-bg" style="background-image:url('Carrossel%2001.png');background-position:center 30%;"></div>
       <div class="slide-content">
-        <p class="slide-eyebrow">Drop Basic — 002</p>
-        <h1 class="slide-title">Abrace o<br>seu estilo.</h1>
+        <h1 class="slide-title">Abrace seu<br>estilo.</h1>
         <a href="#colecao" class="slide-cta">Ver Coleção</a>
       </div>
     </div>
     <div class="carousel-slide">
-      <div class="carousel-bg" style="background-image:url('HUGG-TS-OVS-OW-3.png');background-position:center 15%;"></div>
+      <div class="carousel-bg" style="background-image:url('Design%20sem%20nome%20(5).png');background-position:center 30%;"></div>
       <div class="slide-content">
-        <p class="slide-eyebrow">Off-White</p>
-        <h1 class="slide-title">Feito pra quem<br>não precisa gritar.</h1>
+        <h1 class="slide-title">Simples por fora.<br>Intencional por dentro.</h1>
         <a href="#colecao" class="slide-cta">Comprar Agora</a>
-      </div>
-    </div>
-    <div class="carousel-slide">
-      <div class="carousel-bg" style="background-image:url('HUGG-TS-OVS-BROWN%204.png');background-position:center 20%;"></div>
-      <div class="slide-content">
-        <p class="slide-eyebrow">Camiseta Marrom</p>
-        <h1 class="slide-title">Sua identidade,<br>sem barulho.</h1>
-        <a href="#colecao" class="slide-cta">Ver Peça</a>
       </div>
     </div>
   </div>
@@ -469,7 +459,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);background:var(--dark);p
 <div class="countdown-section">
   <div class="countdown-inner">
     <div class="countdown-left">
-      <p class="countdown-eyebrow">Lançamento</p>
+      <p class="countdown-eyebrow">Lançamento Drop Basic — 002</p>
       <p class="countdown-title">Abertura das vendas chegando</p>
     </div>
     <div class="countdown-boxes">
@@ -759,7 +749,7 @@ let appliedCoupon=null;
 
 /* ── CAROUSEL ── */
 let slide=0;
-const slides=3;
+const slides=2;
 function initCarousel(){
   const dots=document.getElementById('carouselDots');
   for(let i=0;i<slides;i++){
